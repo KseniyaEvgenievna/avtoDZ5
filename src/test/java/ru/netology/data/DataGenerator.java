@@ -6,12 +6,12 @@ import lombok.Value;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.Locale;
 import java.util.Random;
 
 public class DataGenerator {
-    private static Faker faker = new Faker(new Locale("ru"));
+    private DataGenerator(){
+    }
 
     public static String generateDate(int shift) {
         // TODO: добавить логику для объявления переменной date и задания её значения, для генерации строки с датой
@@ -22,7 +22,7 @@ public class DataGenerator {
     public static String generateCity() {
         // TODO: добавить логику для объявления переменной city и задания её значения, генерацию можно выполнить
         // с помощью Faker, либо используя массив валидных городов и класс Random
-        var cities = new String[]{"Пенза", "Москва", "Пермь", "Мурманск", "Новосибирск", "Красноярск",
+        var cities = new String[]{"Пенза", "Москва", "Пермь", "Мурманск", "Новосибирск", "Красноярск"
         };
         return cities[new Random().nextInt(cities.length)];
     }
